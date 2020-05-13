@@ -12,25 +12,35 @@
 </h:head>
 <h:body>
 	<h:form>
-		<h:commandLink>
-			<h:graphicImage url="imagenpdf.png" width="70" height="70"/>
+			<h:commandLink>
+			<h:graphicImage url="imagenpdf.png" width="70" height="68" />
 			<p:dataExporter type="pdf" target="reporte" fileName="Reporteveo" />
 		</h:commandLink>
 		<h:commandLink>
-			<h:graphicImage url="imagenexcel.jpg" width="68" height="68" />
+			<h:graphicImage url="excel.png" width="68" height="68"  />
 			<p:dataExporter type="xls" target="reporte" fileName="Reporteveo" />
+		</h:commandLink>
+		<h:commandLink>
+			<h:graphicImage url="imprimir.png" width="68" height="68" />
+			<p:printer target="reporte" />
 		</h:commandLink>
 		<p:dataTable id="reporte" value="#{lista}" var="l" rows="10"
 			paginator="true"
 			paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
 			currentPageReportTemplate="{startRecord}-{endRecord} of {totalRecords} records"
 			rowsPerPageTemplate="5,10,15">
-
+			<p:column filterBy="#{l.sede}" headerText="sede" footerText="in"
+				filterMatchMode="in">
+				<c:facet name="filter">
+					<p:selectCheckboxMenu label="Sedes" onchange="#{l.sede}"
+						scrollHeight="150" styleClass="custom-filter">
+						<c:selectItems value="#{l.sede}" />
+					</p:selectCheckboxMenu>
+				</c:facet>
+				<h:outputText value="#{l.sede}" />
+			</p:column>
 			<p:column headerText="Nombre">
 				<p:outputLabel value="#{l.nombre}" />
-			</p:column>
-			<p:column headerText="sede">
-				<p:outputLabel value="l.sede" />
 			</p:column>
 			<p:column headerText="categoria">
 				<p:outputLabel value="#{l.categoria}" />
@@ -45,8 +55,6 @@
 				<p:outputLabel value="#{l.vendidos}" />
 			</p:column>
 		</p:dataTable>
-
 	</h:form>
-
 </h:body>
 </html>
