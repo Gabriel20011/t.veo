@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:c="http://xmlns.jcp.org/jsf/core"
+	xmlns:e="http://java.sun.com/jsp/jstl/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" type="text/css" href="CSS/Ventas.css" />
+	<link rel="stylesheet" type="text/css" href="CSS/font-awesome.css" />
+	<link rel="stylesheet" type="text/css" href="CSS/carrito.css" />
+	<script src="JS/modal.js"></script>
+
+
+
+	<title>Ventas T-VEO</title>
+</h:head>
+<h:body>
+	<c:view>
+		<div id="header">
+			<label class="logo1" id="logo1">T.VEO</label>
+			<h:form>
+			<h:commandButton styleClass="cerrar" value="CERRAR SESION" action="#{iniciarSesion.cerrarSesion()}"></h:commandButton>
+			</h:form>
+			<a href="#" id="modificar_ventas">MODIFICAR</a>
+
+			<h:form>
+				<h:inputText id="buscar" styleClass="buscar"></h:inputText>
+				<h:commandButton styleClass="search"
+					image="https://img.icons8.com/ios/500/search--v1.png"></h:commandButton>
+			</h:form>
+			
+			<div class="usuario_paginaventa">
+				<input class="imgUs" type="image" src="Img/img1.png" width="34" height="34" />
+				<label class="txtUs"> Usuario: #{nombre}</label>
+			</div>
+		</div>
+		<div id="filtros" style="border-radius: 10px; top: 11%">
+			<div>
+				<label id="filtro_texto">FILTROS:</label> <br /> 
+				
+				<div class="checkbox">
+				
+					<h:outputLabel id="categorias" for="menu" value="Categorias: " />
+	        		<p:selectCheckboxMenu id="menuFiltro" label="Elegir" filter="false" filterMatchMode="startsWith" panelStyle="width:250px">
+	            		<c:selectItem itemLabel="TECNOLOGIA" itemValue="TECNOLOGIA" />
+				        <c:selectItem itemLabel="HOGAR" itemValue="HOGAR" />
+				        <c:selectItem itemLabel="JUGUETES" itemValue="JUGUETES" />
+				        <c:selectItem itemLabel="ROPA" itemValue="ROPA" />
+	        		</p:selectCheckboxMenu>
+	        		
+					<p:commandButton style="top: 12px; left: 20px; border-color: black; background-color: #9bd8ea;" value="FILTRAR" />
+
+				</div>
+				
+				<hr style="margin-top: 8%;margin-bottom: 12%;"/>
+				
+				<label id="top" style="padding: 30px;">LO MAS TOP:</label>
+				<table class="tabla1">
+					<tr>
+						<td>#1</td>
+					</tr>
+					<tr>
+						<td>PRODUCTO 1</td>
+					</tr>
+					<tr>
+						<td>VALOR</td>
+					</tr>
+					<tr>
+						<td>#VENTAS</td>
+					</tr>
+				</table>
+
+				<table class="tabla2">
+					<tr>
+						<td>#2</td>
+					</tr>
+					<tr>
+						<td>PRODUCTO 2</td>
+					</tr>
+					<tr>
+						<td>VALOR</td>
+					</tr>
+					<tr>
+						<td>#VENTAS</td>
+					</tr>
+				</table>
+
+				<table class="tabla3">
+					<tr>
+						<td>#3</td>
+					</tr>
+					<tr>
+						<td>PRODUCTO 3</td>
+					</tr>
+					<tr>
+						<td>VALOR</td>
+					</tr>
+					<tr>
+						<td>#VENTAS</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<div class="panelinformacion">
+			<label class="tituloinformacion">Lista De Productos:</label> <br></br>
+			<label class="mensaje">#{info}</label>
+		</div>
+		<div id="general" style="overflow-y: scroll;">
+
+			<table class="tabla_general">
+				<tr>
+					<th>NOMBRE PRODUCTO</th>
+					<th>DISPONIBLES</th>
+					<th>VALOR</th>
+					<th>VER DETALLES</th>
+					<th>AGREGAR AL CARRITO</th>
+				</tr>
+				<ui:repeat var="lib" value="#{lista}" varStatus="status">
+					<tr bgcolor="white">
+						<td><h:outputText value="#{lib.nombre}" /></td>
+						<td><h:outputText value="#{lib.cantidad}" /></td>
+						<td><h:outputText value="$ #{lib.costo}" /></td>
+						<td><p:commandButton styleClass="Dt" value="DETALLES" action="#{IniciarSesion.detalles(lib)}"/></td>
+						<td><p:commandButton styleClass="Ag" value="AGREGAR" action="#{IniciarSesion.Agregar(lib)}"/></td>
+					</tr>
+				</ui:repeat>
+			</table>
+		</div>
+
+		<div id="detalles">
+			<h1 style="margin-left: 24%;">DETALLES</h1>
+			<hr />
+			<div class="valDetalles">
+				<div class="dd">
+					<h:outputLabel class="textod" >NOMBRE: <a class="titD">#{producto.nombre}</a></h:outputLabel> <br />
+				</div>
+				<div class="dd">
+					<h:outputLabel class="textod">VALOR: <a class="titD">$ #{producto.costo}</a></h:outputLabel> <br />
+				</div>
+				<div class="dd">
+					<h:outputLabel class="textod">DISPONIBLES: <a class="titD">#{producto.cantidad} disponibles</a></h:outputLabel> <br /> 
+				</div>
+				<div class="imagenP">
+					<h:graphicImage value="#{producto.link}" id="imagenproducto"/>
+				</div>
+			</div>
+			<p:commandButton id="agregar" value="AGREGAR PRODUCTO" action="#{IniciarSesion.Agregar(producto)}"/>
+		</div>
+		
+		<a href="#modal1" id="carrito"> <span class="fa fa-shopping-cart"></span>
+		</a>
+		<h:form>
+		<div id="modal1" class="modalmask">
+			<div class="modalbox movedown">
+				<a href="#close" title="Close" class="close">X</a>
+				
+				<div id="generalproducto" style="overflow-y: scroll;">
+					
+					<table class="producto">
+						<tr>
+							<td>Producto</td>
+							<td>Valor</td>
+							<td>Cantidad</td>
+						</tr>
+						<ui:repeat var="car" value="#{carrito}" varStatus="status">
+							<tr>
+								<td><h:outputText value="#{car.nombre}" /></td>
+								<td><h:outputText value="#{car.costo}" /></td>
+								<td><p:inputNumber id="number" class="number"
+										value="#{car.cantidad}" /></td>
+								<td><p:commandButton value="ELIMINAR"
+										action="#{IniciarSesion.Eliminar(car)}" /></td>
+
+							</tr>
+						</ui:repeat>
+					</table>
+				</div>
+
+				<div class="espacio"></div>
+
+				<div id="tarjetapago">
+					<h3 class="metodo">Metodos de pago</h3>
+					
+					<p:selectOneMenu class="boxVenta" value="#{venta.metodoPago}">
+						<c:selectItem itemLabel="Tarjeta" itemValue="tarjeta"></c:selectItem>
+						<c:selectItem itemLabel="Efectivo" itemValue="efectivo"></c:selectItem>
+						<c:selectItem itemLabel="Efectivo" itemValue="efectivo"></c:selectItem>
+					</p:selectOneMenu>
+					
+					<h3 class="pregunta">¿Algun vendedor lo asesoro?</h3>
+					<p:selectOneMenu class="lista" value="#{venta.vendedor}">
+						<c:selectItem itemLabel="NINGUNO" itemValue="ninguno"></c:selectItem>
+					</p:selectOneMenu>
+					
+					<h3 class="direccion">Direccion:</h3>
+					<p:inputText class="campodire" value="#{venta.direccion}" />
+					<p:outputLabel value="TOTAL A PAGAR $ #{total}" class="total"></p:outputLabel>
+					
+					<p:commandButton value="RESERVAR" class="reserva" />
+					<p:commandButton value="COMPRAR" class="compra"	action="#{IniciarSesion.agregarVenta(venta ,nombre)}" />
+				</div>
+			</div>
+		</div>
+		</h:form>
+	</c:view>
+</h:body>
+
+
+</html>

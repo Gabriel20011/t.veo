@@ -1,0 +1,237 @@
+.p{
+  	 color: black; 
+     background-color: #6886c5;
+     font-family: 'Times New Roman';
+  
+}
+.v{
+	 color: black; 
+     background-color: #6886c5;
+     font-family: 'Times New Roman';
+	
+}
+.c{
+	 color: black; 
+     background-color: #6886c5;
+     font-family: 'Times New Roman';
+	
+}
+.d{
+	align-content: center;
+	margin-top: 5px;
+	height: 150px;
+}
+.producto{
+	background: #6886c5;
+	width: 100%;
+    overflow : auto;
+    margin-top: 10px;
+    font-family:'Times New Roman'; 
+    font-size: 20px;
+}
+#generalproducto{
+    border: 2px solid black;
+    border-radius: 5px;
+    height: 38%;
+}
+.espacio{
+	margin-top: 26px;
+}
+
+.pago{
+	 position: absolute;
+	 border-style: solid;
+     top: 27%;
+     left: 11.5%;
+     width: 67.5%;
+     height: 69%;
+}
+.metodo{
+	position: absolute;
+	margin-top: 20px;
+	left: 20px;
+}
+.boxVenta {
+	min-width: 72px;
+    left: -39%;
+    top: 67px;
+}
+.efectivo{
+	position: absolute;
+	top: 10%;
+	left: 2px;
+}
+.pregunta{
+	position: absolute;
+	margin-top: -4px;
+	left: 289px;
+}
+.lista{
+	position: absolute;
+	margin-top: 20px;
+	left: 565px;
+}
+.direccion{
+	position: absolute;
+	margin-top: 71px;
+	left: 289px;
+}
+.campodire{
+	position: absolute;
+	margin-top: 93px;
+	left: 406px;
+}
+.total{
+	color: red;
+	position: absolute;
+	margin-top: 134px;
+	left: 289px;
+}
+
+.reserva{
+	position: absolute;
+	margin-top: 241px;
+	left: 20px;
+	font-family:'Times New Roman';  
+	background: #f6f578;
+	color: #fcbf1e;
+    border: 2px solid #f0a500;
+	
+	
+}
+.compra{
+	position: absolute;
+	margin-top: 241px;
+	left: 570px;
+	font-family:'Times New Roman'; 
+	background: #f6f578;
+	color: #fcbf1e;
+	 border: 2px solid #f0a500;
+	
+	 
+}
+.vendedor{
+	position: absolute;
+	left: 65%;
+	top: 60%;
+}
+
+.modalmask {
+    position: fixed;
+    font-family: Arial, sans-serif;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0,0.8);
+    z-index: 99999;
+    opacity:0;
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;
+    pointer-events: none;
+}
+
+.modalmask:target {
+    opacity:1;
+    pointer-events: auto;
+}
+
+.modalbox{
+    width: 700px;
+    height:550px;
+    position: relative;
+    padding: 5px 20px 13px 20px;
+    background: #fff;
+    border-radius:3px;
+    -webkit-transition: all 500ms ease-in;
+    -moz-transition: all 500ms ease-in;
+    transition: all 500ms ease-in;
+     
+}
+
+.movedown {
+    margin: 0 auto;
+}
+
+.modalmask:target .movedown{       
+    margin:2% auto;
+}
+	
+.close {
+    background: #606061;
+    color: #FFFFFF;
+    line-height: 25px;
+    position: absolute;
+    right: 1px;
+    text-align: center;
+    top: 1px;
+    width: 24px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius:3px;
+}
+
+.close:hover {
+    background: #FAAC58;
+    color:#222;
+}
+form {
+  width: 300px;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 50px;
+}
+
+.value-button {
+  display: inline-block;
+  border: 1px solid #ddd;
+  margin: 0px;
+  width: 40px;
+  height: 20px;
+  text-align: center;
+  vertical-align: middle;
+  padding: 11px 0;
+  background: #eee;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.value-button:hover {
+  cursor: pointer;
+}
+
+form #decrease {
+  margin-right: -4px;
+  border-radius: 8px 0 0 8px;
+}
+
+form #increase {
+  margin-left: -4px;
+  border-radius: 0 8px 8px 0;
+}
+
+form #input-wrap {
+  margin: 0px;
+  padding: 0px;
+}
+
+input.number {
+  text-align: center;
+  border: none;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  margin: 0px;
+  width: 40px;
+  height: 40px;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}

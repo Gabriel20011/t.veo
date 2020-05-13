@@ -1,0 +1,52 @@
+body{
+    height: 100%;
+    background-repeat: no-repeat;
+    background: url("https://img.freepik.com/foto-gratis/abstracto-blanco-color-lienzo-fondos-pantalla-texturas-superficie_74190-6376.jpg?size=626&ext=jpg") no-repeat center center fixed;
+    background-size: 100% 100%;
+}
+#header{
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    padding: 20px;
+    background-color: skyblue;
+}
+.logo1{
+    color: white;
+    font-size: 35px;
+    font-weight: bold;
+    
+}
+#volver{
+    background: #5F6F81;;
+    font-family: "Arial Black";
+	color: white;
+    padding: 5px 20px;
+    text-decoration: none;
+    text-decoration: none;
+    position: absolute;
+    left: 85%;
+    top: 28%;
+    border-radius: 15px;
+}
+.tabla_registro{
+    background: white;
+    position: absolute;
+    left: 37%;
+    top: 20%;
+    border-spacing: 15px;
+}
+.sinBorde{
+    border: none;
+    font-family: 'Helvetica';
+}
+.titulo_formulario{
+    font-family: 'Arial Black';
+    font-size: 30px;
+
+}
+
+#boton{
+    border-radius: 15px;
+}

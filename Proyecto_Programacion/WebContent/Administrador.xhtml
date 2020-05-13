@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:c="http://xmlns.jcp.org/jsf/core"
+	xmlns:e="http://java.sun.com/jsp/jstl/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" type="text/css" href="CSS/Administrador.css" />
+	<title>Administrador</title>
+</h:head>
+<h:body>
+	<c:view> 
+	
+	<div class="header"> 
+	<label class="logo1" id="logo1">T.VEO</label> 
+	<h:form>
+	<h:commandButton styleClass="cerrar" value="CERRAR SESION" action="#{iniciarSesion.cerrarSesion()}"/>
+	</h:form>
+	<label class="sede">Sede: #{usuario.ciudad}</label>
+    </div>
+		<div>
+			<div id="panelbotones">
+				<img src="https://www.stickpng.com/assets/images/585e4beacb11b227491c3399.png" id="imagen_logo_admi" />
+				<h:commandButton class="reportes" value="MODULO REPORTES" action="#" />
+				<h:commandButton class="enviar_productos" value="ENVIAR PRODUCTOS" action="#" />
+				<h:commandButton class="desbloquear" value="DESBLOQUEAR" action="#" />
+			</div>
+			<div class="panelinformacion">
+				<label class="tituloinformacion">INFORMACION</label>
+			</div>
+			<div id="general" style="overflow-y: scroll;">
+
+				<table>
+					<tr>
+						<td>NOMBRE PRODUCTO</td>
+						<td>VENTAS</td>
+						<td>VER REGISTRO</td>
+					</tr>
+					<ui:repeat var="lib" value="#{lista}" varStatus="status">
+					<tr>
+						<td><h:outputText value="#{lib.nombre}" /></td>
+						<td><h:outputText value="#{lib.vendidos}" /></td>
+						<td><p:commandButton value="REGISTRO"/></td>
+					</tr>
+				</ui:repeat>
+
+				</table>
+
+			</div>
+			<div id="especifico" style="overflow-y: scroll;">
+				<h1>Producto: #{producto}</h1>
+				<table>
+					<tr>
+						<td>VENDEDOR</td>
+						<td>FECHA</td>
+						<td>CANTIDAD</td>
+					</tr>
+				</table>
+			</div>
+
+		</div>
+
+	</c:view>
+</h:body>
+
+
+</html>

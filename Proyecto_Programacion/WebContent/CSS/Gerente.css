@@ -1,0 +1,91 @@
+body{
+    height: 100%;
+    background-repeat: no-repeat;
+    background: url("https://img.freepik.com/foto-gratis/abstracto-blanco-color-lienzo-fondos-pantalla-texturas-superficie_74190-6376.jpg?size=626&ext=jpg") no-repeat center center fixed;
+    background-size: 100% 100%;
+}
+.header{
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    padding: 20px;
+    background-color: skyblue;
+}
+.logo1{
+    color: white;
+    font-size: 35px;
+    font-weight: bold;
+    
+    
+}
+.cerrar{
+    background: #5F6F81;;
+    font-family: "Arial Black";
+	color: white;
+    padding: 5px 20px;
+    text-decoration: none;
+    text-decoration: none;
+    position: absolute;
+    left: 80%;
+    top: 28%;
+    border-radius: 15px;
+}
+.reportes{
+    position: absolute;
+    top: 60%;
+    left: 3%;
+    height: 5%;
+    width: 90%;
+    background-color: orange;
+    font-family: "Arial Black";
+}
+#imagen_logo_admi{
+    position: absolute;
+    color: #575D69 ;
+    top: 5%;
+    left: 15%;
+    height: 30%;
+    width: 65%;
+}
+#panelInfo{
+	position: absolute;
+    background-color: white;
+    border-style: solid;
+    top: 15%;
+    left: 1%;
+    width: 15%;
+    height: 80%;
+}
+.titulo{
+	position: absolute;
+    color: black;
+    font-size: 35px;
+    font-weight: bold;
+    top: 15%;
+    left: 20%;
+}
+#sede{
+	position: absolute;
+    top: 23%;
+    left: 20%;
+}
+#general{
+   position: absolute;
+   background-color: transparent;
+   border-style: solid;
+   top: 30%;
+   left: 20%;
+   width: 35%;
+   height: 60%;
+
+}
+#especifico{
+	position: absolute;
+   background-color: transparent;
+   border-style: solid;
+   top: 30%;
+   left: 60%;
+   width: 35%;
+   height: 60%;
+}

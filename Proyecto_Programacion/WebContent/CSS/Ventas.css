@@ -1,0 +1,242 @@
+body{
+    height: 100%;
+    font-family: "Arial";
+    background-repeat: no-repeat;
+    background: url("https://img.freepik.com/foto-gratis/abstracto-blanco-color-lienzo-fondos-pantalla-texturas-superficie_74190-6376.jpg?size=626&ext=jpg") no-repeat center center fixed;
+    background-size: 100% 100%;
+}
+#header{
+    position: fixed;
+    width: 100%;
+    height:5% ;
+    left: 0;
+    top: 0;
+    padding: 20px;
+    background-color: skyblue;
+}
+.logo1{
+    color: white;
+    font-size: 35px;
+    font-weight: bold;
+    
+}
+.cerrar{
+    background: #5F6F81;;
+    font-family: "Arial Black";
+	color: white;
+    padding: 5px 20px;
+    text-decoration: none;
+    text-decoration: none;
+    position: absolute;
+    left: 80%;
+    top: 28%;
+    border-radius: 15px;
+}
+.buscar{
+    position: absolute;
+    left: 10%;
+    top: 28%;
+    font-size: 25px;
+    width: 30%;
+}
+.search{
+    position: absolute;
+    left: 38%;
+    top: 32%;
+    width: 2%;
+    height: 38%;
+}
+.usuario_paginaventa{
+    position: absolute;
+    left: 48%;
+    top: 27%;
+    font-size: 25px;
+}
+#modificar_ventas{
+    background: #5F6F81;;
+    font-family: "ARIAL BLACK";
+	color: white;
+    padding: 5px 20px;
+    text-decoration: none;
+    text-decoration: none;
+    position: absolute;
+    left: 71%;
+    top: 28%;
+    border-radius: 15px;
+}
+#filtros{
+    background-color: white;
+    position: absolute;
+    border-width: inherit;
+    border: 3px;
+    border-style: solid;
+    border-color: #000000b5;
+    height: 84.8%;
+    width: 10%;
+    top: 11%;
+}
+#filtro_texto{
+    position: relative;
+    top: 3%;
+    left: 20%;
+    font-size: 25px;
+}
+#categorias{
+    position: relative;
+    top: 3%;
+}
+.checkbox{
+    font-size: 12px;
+}
+.tabla1{
+    background-color: #c7c7c7;
+    font-size: 80%;
+    height: 20%;
+    width: 80%;
+    position: relative;
+    left: 10%;
+    border-color: black;
+    border-width: thin;
+    border-style: solid;
+    margin-top: 8%;
+}
+.tabla2{
+    background-color: #c7c7c7;
+    font-size: 80%;
+    height: 20%;
+    width: 80%;
+    position: relative;
+    left: 10%;
+    border-color: black;
+    border-width: thin;
+    border-style: solid;
+    margin-top: 12%;
+}
+.tabla3{
+    background-color: #c7c7c7;
+    font-size: 80%;
+    height: 20%;
+    width: 80%;
+    position: relative;
+    left: 10%;
+    border-color: black;
+    border-width: thin;
+    border-style: solid;
+    margin-top: 14%;
+}
+.panelinformacion{
+    position: absolute;
+    color: #3f3f3f;
+    font-size: 35px;
+    font-weight: bold;
+    top: 14%;
+    left: 14%;
+}
+#general{
+    position: absolute;
+    background-color: white;
+    border-style: solid;
+    border-radius: 4px;
+    top: 24%;
+    left: 11.5%;
+    width: 65.5%;
+    height: 72%;
+}
+.tabla_general {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	border-radius: 4px;
+    width: 100%;
+    overflow : auto;
+    border-collapse: collapse;
+}
+.tabla_general td, .tabla_general th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.tabla_general tr:nth-child(even) {background-color: #f2f2f2;}
+.tabla_general tr:hover {background-color: #d7d7d7;}
+
+.tabla_general th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #2bb8d0;
+  color: white;
+}
+#detalles{
+    position: absolute;
+    background-color: white;
+    border-style: solid;
+    top: 24%;
+    left: 78%;
+    width: 20%;
+    height: 70%;
+    padding: 10px;
+}
+.textod{
+    font-size: 105%;
+    font-weight: 600;
+    color: indianred;
+}
+.titD{
+	font-size: 92%;
+	font-weight: 200;
+    text-align: justify;
+    color: #1b1b1b;
+}
+#agregar{
+    position: absolute;
+    width: 45%;
+    height: 10%;
+    top: 84%;
+    left: 28%;
+}
+#carrito{
+    position: absolute;
+    font-size: 250%;
+    top: 15%;
+    left: 91%;
+}
+.imagenP{
+	position: relative;
+    top: 35%;
+    left: 4%;
+    width: 75%;
+    margin: 10%;
+}
+#imagenproducto{
+	position: absolute;
+    top: 38%;
+    left: 0%;
+    width: 100%;
+}
+.mensaje{
+	font-size: 50%;
+	color: green;
+}
+.checkbox {
+    font-size: 12px;
+    padding: 12px;
+    padding-top: 6px;
+}
+.imgUs {
+	top: 2%;
+}
+.valDetalles {
+	margin: 7%;
+}
+.dd {
+	margin-bottom: 5%;
+}
+.ui-button {
+    color: #000000bd;
+    background-color: darkgray;
+}
+.ui-widget {
+    font-family: Arial,sans-serif;
+    font-size: 14px;
+}
+#menuFiltro_label {
+	background-color: #f3f3f3;
+}

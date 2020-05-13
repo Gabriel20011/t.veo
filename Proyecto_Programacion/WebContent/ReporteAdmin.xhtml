@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:c="http://xmlns.jcp.org/jsf/core"
+	xmlns:e="http://java.sun.com/jsp/jstl/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<title>Registrar Usuario</title>
+	<link rel="stylesheet" type="text/css" href="CSS/registro.css" />
+</h:head>
+<h:body>
+	<h:form>
+		<h:commandLink>
+			<h:graphicImage url="imagenpdf.png" width="70" height="70"/>
+			<p:dataExporter type="pdf" target="reporte" fileName="Reporteveo" />
+		</h:commandLink>
+		<h:commandLink>
+			<h:graphicImage url="imagenexcel.jpg" width="68" height="68" />
+			<p:dataExporter type="xls" target="reporte" fileName="Reporteveo" />
+		</h:commandLink>
+		<p:dataTable id="reporte" value="#{lista}" var="l" rows="10"
+			paginator="true"
+			paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+			currentPageReportTemplate="{startRecord}-{endRecord} of {totalRecords} records"
+			rowsPerPageTemplate="5,10,15">
+
+			<p:column headerText="Nombre">
+				<p:outputLabel value="#{l.nombre}" />
+			</p:column>
+			<p:column headerText="sede">
+				<p:outputLabel value="l.sede" />
+			</p:column>
+			<p:column headerText="categoria">
+				<p:outputLabel value="#{l.categoria}" />
+			</p:column>
+			<p:column headerText="costo">
+				<p:outputLabel value="#{l.costo}" />
+			</p:column>
+			<p:column headerText="cantidad">
+				<p:outputLabel value="#{l.cantidad}" />
+			</p:column>
+			<p:column headerText="vendidos">
+				<p:outputLabel value="#{l.vendidos}" />
+			</p:column>
+		</p:dataTable>
+
+	</h:form>
+
+</h:body>
+</html>

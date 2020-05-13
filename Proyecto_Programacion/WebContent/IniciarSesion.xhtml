@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:c="http://xmlns.jcp.org/jsf/core"
+	xmlns:e="http://java.sun.com/jsp/jstl/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Iniciar Sesion</title>
+	<link rel="stylesheet" type="text/css" href="CSS/IniciarSesion.css" />
+</h:head>
+<h:body>
+		
+	
+	<div id="header"> 
+	<label class="logo1" id="logo1">T.VEO</label> 
+	<h:link id="volver" outcome="VentanaPrincipal">VOLVER</h:link>
+	
+    </div>
+	<c:view>
+		<h:form>
+		<div id="centrar" style="border: gray; border-radius: 5px;">
+		<p:panel header="INICIAR SESION" style="width:400px; text-align: center;">
+	        
+	        <h:panelGrid columns="2" cellpadding="5" id="panelGrid">
+		        <h:outputLabel for="username" value="Usuario:" />
+		        <p:inputText value="#{IniciarSesion.usuario}" id="username" required="true" label="username" />
+		        <h:outputLabel for="contraseña" value="Contraseña:" />
+		        <p:password  id="contraseña" value="#{IniciarSesion.contraseña}" label="contraseña"/>
+	        </h:panelGrid>
+           
+        	<p:commandButton  value="ACEPTAR" style="text-align: center; top: 5px;" action="#{IniciarSesion.ini()}" />
+        	<h:messages globalOnly="true" style="color:red;margin:8px;" />
+    	</p:panel>
+    </div>
+	</h:form>
+	</c:view>
+</h:body>
+</html>
+
+       

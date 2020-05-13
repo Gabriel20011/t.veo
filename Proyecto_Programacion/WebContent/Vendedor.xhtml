@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:c="http://xmlns.jcp.org/jsf/core"
+	xmlns:e="http://java.sun.com/jsp/jstl/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<title>VENDEDOR</title>
+	<link rel="stylesheet" type="text/css" href="CSS/Vendedor.css" />
+</h:head>
+<h:body>
+	<p:growl id="msj" showDetail="true" />
+
+	<c:view>
+		<div class="header">
+			<label class="logo1" id="logo1">T.VEO</label>
+			<h:form>
+				<h:commandButton styleClass="cerrar" value="CERRAR SESION"
+					action="#{iniciarSesion.cerrarSesion()}" />
+				<h:outputLabel ></h:outputLabel>
+			</h:form>
+		</div>
+		<div>
+			<div id="panelInfo">
+				<img src="https://www.stickpng.com/assets/images/585e4beacb11b227491c3399.png" id="imagen_logo_admi" />
+				<h:outputText id="texto1" value="NOMBRE: #{usuario.nombre} #{usuario.apellido}"/>
+				<h:outputText id="texto2" value="IDENTIFICACION: "/>
+				<h:outputText id="texto3" value="SEDE: #{usuario.ciudad}"/>
+			</div>
+			<div class="ventas">
+				<label class="tituloinformacion">VENTAS</label>
+			</div>
+			<div id="general" style="overflow-y: scroll;">
+
+				<table>
+					<tr>
+						<td>NOMBRE PRODUCTO</td>
+						<td>CANTIDAD</td>
+						<td>FECHA</td>
+						<td>CLIENTE</td>
+						<td>VALOR</td>
+					</tr>
+					
+
+				</table>
+
+			</div>
+		</div>
+	</c:view>
+</h:body>
+</html>
